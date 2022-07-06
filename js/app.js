@@ -6,6 +6,15 @@ class Firegotchi {
     this.boredom = 1;
     this.age = 0;
   }
+  ageUp () {
+    let age = this.age
+    age++
+    return age
+  }
 }
 const pet = new Firegotchi('your pet')
-console.log(pet)
+console.log(pet.ageUp())
+
+const displayAge = () => {
+
+}
