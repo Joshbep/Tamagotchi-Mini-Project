@@ -1,4 +1,5 @@
 //class for tamagotchi
+const totalCount = document.querySelector('#total-count');
 class Firegotchi {
   constructor(name) {
     this.name = name;
@@ -7,24 +8,34 @@ class Firegotchi {
     this.boredom = 1;
     this.age = 0;
   }
-//   ageUp () {
-//     let age = this.age
-//     setTimeout(function() {
-//       console.log(age);
-//       age++;
-//       if (age < 3) {
-//         ageUp();
-//       }
-//     }, 3000)
-//   }
-// }
-
-const pet = new Firegotchi('your pet')
-// console.log(pet.ageUp())
-
-const displayAge = () => {
-
+  ageUp () {
+    let age = this.age
+    if (age < 30) {
+      console.log('ageup')
+      age++
+      return age
+    }
+    setTimeout(ageUp, 2000);
+  }
+  feedPet () {
+    this.hunger--;
+    console.log(this.hunger);
+    }
+  sleep() {
+    this.sleepiness --
+  }
+  bored1() {
+    this.bored --
+  }
 }
-document.getElementById('food').addEventListener('click', )
-document.getElementById('lights').addEventListener('click', )
-document.getElementById('bored').addEventListener('click', )
+const pet = new Firegotchi('your pet')
+// console.log(pet.ageUp());
+
+// const displayAge = () => {
+//
+// }
+  const count = pet.hunger;
+  totalCount.innerText = count;
+  document.getElementById('feed').addEventListener("click", pet.feedPet())
+// document.getElementById('lights').addEventListener('click', )
+// document.getElementById('bored').addEventListener('click', )
