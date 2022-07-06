@@ -31,3 +31,34 @@ header {
 #bored {
   margin: 10px;
 }
+
+.stats {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.hungerStat {
+  margin: 10px;
+}
+
+.sleepStat {
+  margin: 10px;
+}
+
+.age {
+  margin: 10px;
+}
+
+.boredStat {
+    margin: 10px;
+}
+
+.characterName {
+    margin: 10px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
