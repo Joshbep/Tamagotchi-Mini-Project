@@ -53,7 +53,6 @@ class Firegotchi {
     } else {
     this.sleep --;
     this.hunger ++;
-    this.bored --;
     }
     updateStats();
   }
@@ -61,13 +60,46 @@ class Firegotchi {
     if (this.bored > 10) {
       return
     }else if (this.bored < 1) {
-      this.bored= 0
+      this.bored = 0
     } else {
       this.bored --;
       this.hunger ++;
       this.sleep ++;
     }
     updateStats();
+  }
+  addHunger() {
+    setInterval(() => {
+      this.hunger++;
+      updateStats();
+      if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
+        hungerStat.innerText = ('Gameover');
+        boredStat.innerText = ('Gameover');
+        sleepStat.innerText = ('Gameover');
+      }
+    }, 3000)
+  }
+  addSleep() {
+    setInterval(() => {
+      this.sleep++;
+      updateStats();
+      if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
+        hungerStat.innerText = ('Gameover');
+        boredStat.innerText = ('Gameover');
+        sleepStat.innerText = ('Gameover');
+      }
+    }, 8000)
+  }
+  addBoredom() {
+    setInterval(() => {
+      this.bored++;
+      updateStats();
+      if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
+        hungerStat.innerText = ('Gameover');
+        boredStat.innerText = ('Gameover');
+        sleepStat.innerText = ('Gameover');
+      }
+    }, 5000)
   }
 }
 // const pet = new Firegotchi(name) //should put inside start game
@@ -93,22 +125,31 @@ const naming = () => {
 const darkMode = () => {
   let element = document.body;
   element.classList.toggle("dark-mode")
-  console.log(pet.sleepy());
+  document.querySelector(".stats").style.color = "black";
+  pet.sleepy();
   updateStats();
+  setTimeout(lightMode, 1000);
+}
+const lightMode = () => {
+  let element = document.body;
+  element.classList.toggle("light-mode")
 }
 
 const startGame = () => {
   naming();
-  let timer = setInterval (() => {
+  setInterval (() => {
     pet.ageUp();
     if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
       console.log("Gameover");
       hungerStat.innerText = ('Gameover');
       boredStat.innerText = ('Gameover');
       sleepStat.innerText = ('Gameover');
-      clearInterval(timer);
+      clearInterval();
     }
  }, 5000);
+  pet.addHunger();
+  pet.addSleep();
+  pet.addBoredom();
   updateStats();
 }
 // console.log(pet.ageUp());
@@ -123,7 +164,6 @@ const startGame = () => {
 // }
 
 submitButton.addEventListener('click', startGame)
-sleepButton.addEventListener('click', darkMode)
-// document.getElementById('feed').addEventListener('click', e => pet.feedPet)
-// document.getElementById('lights').addEventListener('click', )
-// document.getElementById('bored').addEventListener('click', )
+sleepButton.addEventListener('click', () => {darkMode();})
+foodButton.addEventListener('click', () => {pet.feedPet();})
+playButton.addEventListener('click', () => {pet.play();})

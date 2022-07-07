@@ -1,4 +1,9 @@
 body {
+  background-image: url("../images/background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   display: flex;
   flex-direction: column;
 }
@@ -34,31 +39,61 @@ header {
 
 .stats {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   list-style: none;
 }
 
 .hungerStat {
+  background-color: white;
+  border: solid;
+  padding: 3px;
   margin: 10px;
 }
 
 .sleepStat {
+  background-color: white;
+  border: solid;
+  padding: 3px;
   margin: 10px;
 }
 
 .age {
+  background-color: white;
+  border: solid;
+  padding: 3px;
   margin: 10px;
 }
 
 .boredStat {
-    margin: 10px;
+  background-color: white;
+  border: solid;
+  padding: 3px;
+  margin: 10px;
 }
 
 .characterName {
-    margin: 10px;
+  background-color: white;
+  border: solid;
+  padding: 3px;
+  margin: 10px;
 }
 
 .dark-mode {
-  background-color: black;
+  background-image: url("../images/night.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   color: white;
+}
+
+.light-mode {
+  background-image: url("../images/background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: black;
 }
