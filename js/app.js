@@ -5,6 +5,8 @@
 //create function with for loop to age, eat, sleep and play
 // set up funciton to animate pet
 //set up functino to play game
+// const timer = time = 0, isNightTime = false;
+// console.log(timer);
 const hungerStat = document.querySelector('.hungerStat');
 const sleepStat = document.querySelector('.sleepStat');
 const boredStat = document.querySelector('.boredStat');
@@ -24,54 +26,59 @@ class Firegotchi {
     this.sleep = 1;
     this.bored = 1;
     this.age = 0;
+
   }
   ageUp () {
-  this.age++;
+  this.age ++;
   this.hunger++;
-  hungerStat.innerText = this.hunger
-  boredStat.innerText = this.bored
-  sleepStat.innerText = this.sleepy
-  ageStat.innerText = this.age
+  updateStats();
   }
   feedPet () {
+    if (this.hunger > 10) {
+      return
+    } else if (this.hunger < 1) {
+      this.hunger = 0
+    } else {
     this.hunger --;
     this.sleep ++;
     this.bored ++;
-    if (this.hunger < 0) {
-      this.hunger = 0;
+    updateStats();
     }
-    hungerStat.innerText = this.hunger
-    boredStat.innerText = this.bored
-    sleepStat.innerText = this.sleepy
-    ageStat.innerText = this.age
-    }
+  }
   sleepy () {
+    if (this.sleep > 10) {
+      return
+    }else if (this.hunger < 1) {
+      this.sleep = 0
+    } else {
     this.sleep --;
     this.hunger ++;
     this.bored --;
-    if (this.sleep < 0) {
-      this.sleep = 0;
     }
-    hungerStat.innerText = this.hunger
-    boredStat.innerText = this.bored
-    sleepStat.innerText = this.sleepy
-    ageStat.innerText = this.age
+    updateStats();
   }
   play () {
-    this.bored --;
-    this.hunger ++;
-    this.sleep ++;
-    if (this.bored < 0) {
-      this.bored = 0;
+    if (this.bored > 10) {
+      return
+    }else if (this.bored < 1) {
+      this.bored= 0
+    } else {
+      this.bored --;
+      this.hunger ++;
+      this.sleep ++;
     }
-    hungerStat.innerText = this.hunger
-    boredStat.innerText = this.bored
-    sleepStat.innerText = this.sleepy
-    ageStat.innerText = this.age
+    updateStats();
   }
 }
 // const pet = new Firegotchi(name) //should put inside start game
-  const pet = new Firegotchi(name)
+const pet = new Firegotchi(name)
+
+const updateStats = () => {
+  ageStat.innerText = `Age: ${pet.age}`;
+  sleepStat.innerText = `Sleepiness: ${pet.sleep}`;
+  hungerStat.innerText = `Hunger: ${pet.hunger}`;
+  boredStat.innerText = `Boredom: ${pet.bored}`;
+}
 
 const naming = () => {
   nameField.disabled = true
@@ -86,6 +93,23 @@ const naming = () => {
 const darkMode = () => {
   let element = document.body;
   element.classList.toggle("dark-mode")
+  console.log(pet.sleepy());
+  updateStats();
+}
+
+const startGame = () => {
+  naming();
+  let timer = setInterval (() => {
+    pet.ageUp();
+    if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
+      console.log("Gameover");
+      hungerStat.innerText = ('Gameover');
+      boredStat.innerText = ('Gameover');
+      sleepStat.innerText = ('Gameover');
+      clearInterval(timer);
+    }
+ }, 5000);
+  updateStats();
 }
 // console.log(pet.ageUp());
 // pet.ageUp();
@@ -98,7 +122,7 @@ const darkMode = () => {
 //
 // }
 
-submitButton.addEventListener('click', naming)
+submitButton.addEventListener('click', startGame)
 sleepButton.addEventListener('click', darkMode)
 // document.getElementById('feed').addEventListener('click', e => pet.feedPet)
 // document.getElementById('lights').addEventListener('click', )
