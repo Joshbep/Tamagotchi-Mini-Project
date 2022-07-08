@@ -8,23 +8,27 @@
   <body>
     <header>
       <h1>FIREGOTCHI GAME</h1>
-      <h4>You have to take care of you fire pet, so they do not faint.</h4>
+      <h4>You have to take care of your fire pet so they do not faint.</h4>
       <h2>HOW TO PLAY:</h2>
-      <h4>Your FIREGOTCHI dies when any STAT hits 10</h4>
       <ul>
         <li>Feed when hungry</li>
         <li>Turn off lights if sleepy</li>
-        <li>Play with if your pet is getting bored</li>
+        <li>Play if your pet is getting bored</li>
       </ul>
-      <p></p>
-      <p>Enter the name of your pet below. Once you click sumbit the game will begin.</p>
+      <h4>Your FIREGOTCHI dies when any STAT hits 10</h4>
+      <p>Enter the name of your pet below. Once you click sumbit, the game will begin.</p>
       <form>
         <label for="FIREGOTCHI NAME">FIREGOTCHI NAME:</label>
         <input class='inputName' type="text">
         <input class = 'submit' type="submit">
       </form>
     </header>
-    <div class="stats">
+    <div class="pet">
+    <img class = 'character' id='egg' src="./images/egg.gif" alt="jumping egg">
+    <img class = 'character' id= 'charmander'src="./images/imgur.gif" alt="running charmander">
+    <img class = 'character' id= 'charm'src="./images/charm.gif" alt="wild charmeleon">
+    </div>
+    <div class="cont">
       <ul class="stats">
         <li class= 'hungerStat'>Hunger:</li>
         <li class= 'sleepStat'>Sleepiness:</li>
@@ -36,9 +40,8 @@
     <div class="buttons">
       <button id="feed">FEED</button>
       <button id="lights">TURN LIGHTS OFF</button>
-      <button id="bored">BOREDOM</button>
+      <button id="bored">PLAY</button>
     </div>
-    <img class = 'character' src="./images/Imgur.gif" alt="spinning charmander">
 <script src="./js/app.js"></script>
   </body>
 </html>

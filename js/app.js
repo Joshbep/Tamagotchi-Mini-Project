@@ -18,6 +18,8 @@ const nameField = document.querySelector('.inputName');
 const submitButton = document.querySelector('.submit');
 const character = document.querySelector('.character');
 const characterName = document.querySelector('.characterName');
+const egg = document.querySelector('#egg');
+const charmanderpic = document.querySelector('#charmander');
 
 class Firegotchi {
   constructor(name) {
@@ -39,9 +41,7 @@ class Firegotchi {
     } else if (this.hunger < 1) {
       this.hunger = 0
     } else {
-    this.hunger --;
-    this.sleep ++;
-    this.bored ++;
+    this.hunger -= 2;
     updateStats();
     }
   }
@@ -51,8 +51,7 @@ class Firegotchi {
     }else if (this.hunger < 1) {
       this.sleep = 0
     } else {
-    this.sleep --;
-    this.hunger ++;
+    this.sleep -= 2;
     }
     updateStats();
   }
@@ -63,8 +62,6 @@ class Firegotchi {
       this.bored = 0
     } else {
       this.bored --;
-      this.hunger ++;
-      this.sleep ++;
     }
     updateStats();
   }
@@ -76,8 +73,9 @@ class Firegotchi {
         hungerStat.innerText = ('Gameover');
         boredStat.innerText = ('Gameover');
         sleepStat.innerText = ('Gameover');
+        ageStat.innerText = ('Gameover');
       }
-    }, 3000)
+    }, 6000)
   }
   addSleep() {
     setInterval(() => {
@@ -87,6 +85,7 @@ class Firegotchi {
         hungerStat.innerText = ('Gameover');
         boredStat.innerText = ('Gameover');
         sleepStat.innerText = ('Gameover');
+        ageStat.innerText = ('Gameover');
       }
     }, 8000)
   }
@@ -98,6 +97,7 @@ class Firegotchi {
         hungerStat.innerText = ('Gameover');
         boredStat.innerText = ('Gameover');
         sleepStat.innerText = ('Gameover');
+        ageStat.innerText = ('Gameover');
       }
     }, 5000)
   }
@@ -135,8 +135,19 @@ const lightMode = () => {
   element.classList.toggle("light-mode")
 }
 
+const pictureChange = () => {
+  if (pet.age < 1) {
+    document.querySelector('#egg').src = "./images/imgur.gif";
+  }
+
+  if (pet.age > 3) {
+    document.querySelector('#egg').src = "./images/charm.gif";
+  }
+}
+
 const startGame = () => {
   naming();
+  pictureChange();
   setInterval (() => {
     pet.ageUp();
     if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
@@ -151,6 +162,9 @@ const startGame = () => {
   pet.addSleep();
   pet.addBoredom();
   updateStats();
+  sleepButton.addEventListener('click', () => {darkMode();})
+  foodButton.addEventListener('click', () => {pet.feedPet();})
+  playButton.addEventListener('click', () => {pet.play();})
 }
 // console.log(pet.ageUp());
 // pet.ageUp();
@@ -163,7 +177,4 @@ const startGame = () => {
 //
 // }
 
-submitButton.addEventListener('click', startGame)
-sleepButton.addEventListener('click', () => {darkMode();})
-foodButton.addEventListener('click', () => {pet.feedPet();})
-playButton.addEventListener('click', () => {pet.play();})
+submitButton.addEventListener('click', () => {startGame();})
