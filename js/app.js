@@ -33,6 +33,7 @@ class Firegotchi {
   ageUp () {
   this.age ++;
   this.hunger++;
+  pictureChange();
   updateStats();
   }
   feedPet () {
@@ -136,18 +137,25 @@ const lightMode = () => {
 }
 
 const pictureChange = () => {
-  if (pet.age < 1) {
+  if (pet.age === 1) {
+    alert('Your egg is finally hatching!')
     document.querySelector('#egg').src = "./images/imgur.gif";
-  }
-
-  if (pet.age > 3) {
+    const charma = document.querySelector('#egg').src = "./images/imgur.gif";
+    charma.height = 550;
+    charma.width = 350;
+  } else if (pet.age === 3) {
+    alert('Your pet is evolving!')
     document.querySelector('#egg').src = "./images/charm.gif";
+  } else if (pet.age === 6) {
+    alert('Your pet is evolving again!')
+    const chari = document.querySelector('#egg').src = "./images/charizard.webp"
+    chari.height = 650;
+    chari.width = 550;
   }
 }
 
 const startGame = () => {
   naming();
-  pictureChange();
   setInterval (() => {
     pet.ageUp();
     if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
