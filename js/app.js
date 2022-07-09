@@ -99,6 +99,13 @@ const updateStats = () => {
   sleepStat.innerText = `Sleepiness: ${pet.sleep}`;
   hungerStat.innerText = `Hunger: ${pet.hunger}`;
   boredStat.innerText = `Boredom: ${pet.bored}`;
+  if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
+    console.log("Gameover");
+    hungerStat.innerText = ('Gameover');
+    boredStat.innerText = ('Gameover');
+    sleepStat.innerText = ('Gameover');
+    ageStat.innerText = ('Gameover');
+  }
 }
 
 const naming = () => {
