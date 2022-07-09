@@ -50,9 +50,9 @@ class Firegotchi {
     let appleImageTag = document.createElement('img');
     appleImageTag.setAttribute('id', 'appleImage')
     appleDiv.appendChild(appleImageTag)
-    appleImageTag.src = './images/apple.png'
-    appleImageTag.style.height = '100px';
-    appleImageTag.style.width = '80px';
+    appleImageTag.src = './images/apple.gif'
+    appleImageTag.style.height = '200px';
+    appleImageTag.style.width = '150px';
     setTimeout((()=> {appleImageTag.remove()}), 1500)
     updateStats();
   }
@@ -125,6 +125,9 @@ const updateStats = () => {
     boredStat.innerText = ('Gameover');
     sleepStat.innerText = ('Gameover');
     ageStat.innerText = ('Gameover');
+    foodButton.remove();
+    sleepButton.remove();
+    playButton.remove();
   }
 }
 
