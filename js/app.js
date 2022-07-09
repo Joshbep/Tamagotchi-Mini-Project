@@ -135,9 +135,9 @@ const pictureChange = () => {
   if (pet.age === 1) {
     alert('Your egg is finally hatching!')
     document.querySelector('#egg').src = "./images/imgur.gif";
-    const charma = document.querySelector('#egg').src = "./images/imgur.gif";
-    charma.height = 550;
-    charma.width = 350;
+    // const charma = document.querySelector('#egg').src = "./images/imgur.gif";
+    // charma.height = 550;
+    // charma.width = 350;
   } else if (pet.age === 3) {
     alert('Your pet is evolving!')
     document.querySelector('#egg').src = "./images/charm.gif";
