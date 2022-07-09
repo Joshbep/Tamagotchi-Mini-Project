@@ -10,6 +10,28 @@ body {
   justify-content: center;
 }
 
+h1 {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 35px
+}
+
+h4 {
+  font-family: 'Roboto Mono', monospace;font-family: 'Roboto Mono', monospace;
+  font-size: 14px
+}
+h2 {
+  font-family: 'Roboto Mono', monospace;
+}
+
+p {
+  font-family: 'Roboto Mono', monospace;
+}
+
+label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 13px;
+}
+
 header {
   border: solid 1.5px;
   display: flex;
@@ -19,6 +41,13 @@ header {
    position: relative;
   margin: 20px 20px 0px 20px;
   padding: 0px 10px 15px 10px;
+  background:rgba(255,255,255, 0.3);
+}
+
+.topU {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  font-size: 17px
 }
 
 .buttons {
@@ -48,40 +77,42 @@ header {
   flex-direction: row;
   list-style: none;
   margin-right: 15px;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
 }
 
 .hungerStat {
   background-color: white;
   border: solid;
-  padding: 3px;
+  padding: 5px;
   margin: 10px;
 }
 
 .sleepStat {
   background-color: white;
   border: solid;
-  padding: 3px;
+  padding: 5px;
   margin: 10px;
 }
 
 .age {
   background-color: white;
   border: solid;
-  padding: 3px;
+  padding: 5px;
   margin: 10px;
 }
 
 .boredStat {
   background-color: white;
   border: solid;
-  padding: 3px;
+  padding: 5px;
   margin: 10px;
 }
 
 .characterName {
   background-color: white;
   border: solid;
-  padding: 3px;
+  padding: 5px;
   margin: 10px;
 }
 
