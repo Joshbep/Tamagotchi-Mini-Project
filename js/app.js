@@ -7,6 +7,7 @@
 //set up functino to play game
 // const timer = time = 0, isNightTime = false;
 // console.log(timer);
+//sounds inspired by another presentation
 const hungerStat = document.querySelector('.hungerStat');
 const sleepStat = document.querySelector('.sleepStat');
 const boredStat = document.querySelector('.boredStat');
@@ -20,7 +21,7 @@ const character = document.querySelector('.character');
 const characterName = document.querySelector('.characterName');
 const egg = document.querySelector('#egg');
 const charmanderpic = document.querySelector('#charmander');
-const appleDiv = document.querySelector('#appleDiv');
+const appleDiv = document.querySelector('#Food-and-Ball-Image');
 
 class Firegotchi {
   constructor(name) {

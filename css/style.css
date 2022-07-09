@@ -70,10 +70,18 @@ header {
   margin: 10px;
 }
 
-#appleDiv {
+#ballImage{
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    bottom: 20%;
+    left: 20%;
+}
+
+#appleImage{
   position: absolute;
-  bottom:15%;
-  left: 13%;
+  bottom: 15%;
+    left: 18%;
 }
 
 .stats {
