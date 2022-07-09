@@ -20,7 +20,7 @@ const character = document.querySelector('.character');
 const characterName = document.querySelector('.characterName');
 const egg = document.querySelector('#egg');
 const charmanderpic = document.querySelector('#charmander');
-const apple = document.querySelector('#apple');
+const appleDiv = document.querySelector('#appleDiv');
 
 class Firegotchi {
   constructor(name) {
@@ -44,6 +44,16 @@ class Firegotchi {
     } else {
     this.hunger --;
     }
+    let apple = document.createElement('div');
+    apple.setAttribute('id', 'apple');
+    appleDiv.appendChild(apple);
+    let appleImageTag = document.createElement('img');
+    appleImageTag.setAttribute('id', 'appleImage')
+    appleDiv.appendChild(appleImageTag)
+    appleImageTag.src = './images/apple.png'
+    appleImageTag.style.height = '100px';
+    appleImageTag.style.width = '80px';
+    setTimeout((()=> {appleImageTag.remove()}), 1500)
     updateStats();
   }
   sleepy () {
@@ -64,6 +74,16 @@ class Firegotchi {
     } else {
       this.bored --;
     }
+    let ball = document.createElement('div');
+    ball.setAttribute('id', 'ball');
+    appleDiv.appendChild(ball);
+    let ballImageTag = document.createElement('img');
+    ballImageTag.setAttribute('id', 'ballImage')
+    appleDiv.appendChild(ballImageTag)
+    ballImageTag.src = './images/pokeball.gif'
+    ballImageTag.style.height = '120px';
+    ballImageTag.style.width = '120px';
+    setTimeout((()=> {ballImageTag.remove()}), 1500)
     updateStats();
   }
   addHunger() {

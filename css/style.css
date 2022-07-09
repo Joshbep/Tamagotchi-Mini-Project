@@ -70,6 +70,12 @@ header {
   margin: 10px;
 }
 
+#appleDiv {
+  position:absolute;
+  bottom:18%;
+  left: 13%;
+}
+
 .stats {
   display: flex;
   justify-content: space-evenly;
@@ -155,6 +161,7 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 #charip {
   display: none;
