@@ -20,6 +20,7 @@ const character = document.querySelector('.character');
 const characterName = document.querySelector('.characterName');
 const egg = document.querySelector('#egg');
 const charmanderpic = document.querySelector('#charmander');
+const apple = document.querySelector('#apple');
 
 class Firegotchi {
   constructor(name) {
@@ -28,13 +29,12 @@ class Firegotchi {
     this.sleep = 1;
     this.bored = 1;
     this.age = 0;
-
   }
   ageUp () {
   this.age ++;
   this.hunger++;
-  pictureChange();
   updateStats();
+  pictureChange();
   }
   feedPet () {
     if (this.hunger > 10) {
@@ -42,9 +42,9 @@ class Firegotchi {
     } else if (this.hunger < 1) {
       this.hunger = 0
     } else {
-    this.hunger -= 2;
-    updateStats();
+    this.hunger --;
     }
+    updateStats();
   }
   sleepy () {
     if (this.sleep > 10) {
@@ -52,7 +52,7 @@ class Firegotchi {
     }else if (this.hunger < 1) {
       this.sleep = 0
     } else {
-    this.sleep -= 2;
+    this.sleep --;
     }
     updateStats();
   }
@@ -69,38 +69,26 @@ class Firegotchi {
   addHunger() {
     setInterval(() => {
       this.hunger++;
-      updateStats();
-      if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
-        hungerStat.innerText = ('Gameover');
-        boredStat.innerText = ('Gameover');
-        sleepStat.innerText = ('Gameover');
-        ageStat.innerText = ('Gameover');
+      if (this.hunger < 1) {
+        this.hunger = 0
       }
-    }, 6000)
+      updateStats();
+    }, 5000)
   }
   addSleep() {
     setInterval(() => {
       this.sleep++;
-      updateStats();
-      if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
-        hungerStat.innerText = ('Gameover');
-        boredStat.innerText = ('Gameover');
-        sleepStat.innerText = ('Gameover');
-        ageStat.innerText = ('Gameover');
+      if (this.sleep < 1) {
+        this.sleep = 0
       }
-    }, 8000)
+      updateStats();
+    }, 6000)
   }
   addBoredom() {
     setInterval(() => {
       this.bored++;
       updateStats();
-      if (pet.hunger > 10 || pet.bored > 10 || pet.sleep > 10) {
-        hungerStat.innerText = ('Gameover');
-        boredStat.innerText = ('Gameover');
-        sleepStat.innerText = ('Gameover');
-        ageStat.innerText = ('Gameover');
-      }
-    }, 5000)
+    }, 4000)
   }
 }
 // const pet = new Firegotchi(name) //should put inside start game
@@ -149,8 +137,8 @@ const pictureChange = () => {
   } else if (pet.age === 6) {
     alert('Your pet is evolving again!')
     const chari = document.querySelector('#egg').src = "./images/charizard.webp"
-    chari.height = 650;
-    chari.width = 550;
+    chari.height = 850;
+    chari.width = 750;
   }
 }
 
