@@ -7,7 +7,7 @@ The process was definitely trial-by-fire as it is the first time I've utilized a
 <br>
 I was able to apply all the conecepts i've learned so far and utilized simple DOM manipulation and object-oriented programming. I was also able to learn new "micro" concepts like using intervals and manipulating CSS through JavaScript to change overall functionality.
 <br><br>
-Thanks for taking a look! If you have any feedback, it would be more than appreciated through this learning process.
+If you check it out, let me know If you have any feedback. It would help further my journey!
 </div>
 
 <br>
