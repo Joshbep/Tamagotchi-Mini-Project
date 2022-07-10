@@ -1,5 +1,5 @@
 # Firegotchi-Mini-Project
-![Day Preview](/images/project)
+![Day Preview](./images/project)
 ## Description
 <div>
 Welcome to my first mini project! This is the first project that I've utilized all I've learned JavaScript, HTML, and CSS. 
