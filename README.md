@@ -14,6 +14,6 @@ Thanks for taking a look! If you have any feedback, it would be more than apprec
 
 <details>
   <summary>Disclaimer</summary>
-  All artwork and audio used in this project were used for educational purposes only and are the property of their respective owners.
+  All artwork in this project were used for educational purposes only and are the property of their respective owners.
 </details>
 
