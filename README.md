@@ -1,2 +1,3 @@
-# Tamagotchi-Mini-Project
-Tamagotchi Mini-Project - Your own living pet
+# Firegotchi-Mini-Project
+Description
+<br>
